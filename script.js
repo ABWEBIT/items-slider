@@ -50,5 +50,5 @@ class ItemsSlider{
     this.box.style.transform = 'translateX(calc('+percent+'% - '+indent+'px))';
   }
 }
-new ItemsSlider('videos',300);
-new ItemsSlider('movies',150);
+new ItemsSlider('videos',400);
+new ItemsSlider('movies',250);
