@@ -9,6 +9,21 @@ class ItemsSlider{
     this.next = this.element.querySelector('.section .button[data-nav="next"]');
     this.prev.addEventListener('click',()=>this._prev());
     this.next.addEventListener('click',()=>this._next());
+    this.touchStartX = null;
+    this.touchMoveX = null;
+    this.touchEndX = null;
+    this.box.addEventListener('touchstart',(e)=>{
+      this.touchStartX = e.touches[0].clientX;
+    });
+    this.box.addEventListener('touchmove',(e)=>{
+      this.touchMoveX = e.touches[0].clientX;
+    });
+    this.box.addEventListener('touchend',(e)=>{
+      this.touchEndX = e.changedTouches[0].clientX;
+      if(this.touchStartX < this.touchEndX) this._prev()
+      else if(this.touchStartX > this.touchEndX) this._next();
+    });
+
     this.items = this.box.querySelectorAll('.section .item');
     this.itemWidth = width;
     this.min = 0;
