@@ -15,9 +15,9 @@ class ItemsSlider{
     this.box.addEventListener('touchstart',(e)=>{
       this.touchStartX = e.touches[0].clientX;
     });
-    this.box.addEventListener('touchmove',(e)=>{
-      this.touchMoveX = e.touches[0].clientX;
-    });
+    //this.box.addEventListener('touchmove',(e)=>{
+    //  this.touchMoveX = e.touches[0].clientX;
+    //});
     this.box.addEventListener('touchend',(e)=>{
       this.touchEndX = e.changedTouches[0].clientX;
       if(this.touchStartX < this.touchEndX) this._prev()
